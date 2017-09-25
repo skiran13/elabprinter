@@ -27,6 +27,8 @@ def pdfconv():
 def store_login():
     u = user.get()
     p = password.get()
+    progs = programs.get()
+    progs = int(progs)
     root.destroy()
     chromeOptions = webdriver.ChromeOptions()
     pref = {"download.default_directory" : os.path.join(os.environ['USERPROFILE'], "Desktop\\Matlab Printer")}
@@ -39,7 +41,7 @@ def store_login():
     time.sleep(1)
     browser.find_element_by_css_selector("div.card-content.white-text").click()
     delay = 1
-    for o in range(22,26):
+    for o in range(progs):
         o = str(o)
         browser.get("http://ulc.srmuniv.ac.in/elabvdp/login/student/code/mathslab/mathslab.code.php?id=1&value="+o)
         try:
@@ -54,13 +56,14 @@ def store_login():
 
 
 root = tk.Tk()
-root.geometry('300x175')
+root.geometry('300x200')
 root.title('Matlab Printer')
 parent = tk.Frame(root, padx=10, pady=10)
 parent.pack(fill=tk.BOTH, expand=True)
 user = entry(parent, "User Name : ", 16)
 password = entry(parent, "Password :", 16, show="*")
-b = tk.Button(parent, borderwidth=4, text="Login", width=10, pady=8, command=store_login)
+programs = entry(parent, "No. of Programs : ", 3)
+b = tk.Button(parent, borderwidth=4, text="Login", width=10, pady=10, command=store_login)
 b.pack(side=tk.BOTTOM)
 parent.mainloop()
 pdfconv()
