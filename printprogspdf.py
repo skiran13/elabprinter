@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 import os
-import img2pdf
+from img2pdf import convert
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,9 +17,9 @@ def entry(parent, caption, width=None, **options):
     return entry
 
 def pdfconv():
-    with open("output.pdf", "wb") as f:
-        f.write(img2pdf.convert([i for i in os.listdir(os.path.join(os.environ['USERPROFILE'], "Desktop\\Scilab")) if i.endswith(".png")]))
-    for file in os.listdir(os.path.join(os.environ['USERPROFILE'], "Desktop\\Scilab")):
+    with open("Matlab Programs.pdf", "wb") as f:
+        f.write(convert([i for i in os.listdir(os.path.join(os.environ['USERPROFILE'], "Desktop\\Matlab Printer")) if i.endswith(".png")]))
+    for file in os.listdir(os.path.join(os.environ['USERPROFILE'], "Desktop\\Matlab Printer")):
         if file.endswith(".png"):
             os.remove(file)
     return
@@ -29,9 +29,9 @@ def store_login():
     p = password.get()
     root.destroy()
     chromeOptions = webdriver.ChromeOptions()
-    pref = {"download.default_directory" : os.path.join(os.environ['USERPROFILE'], "Desktop\\Scilab")}
+    pref = {"download.default_directory" : os.path.join(os.environ['USERPROFILE'], "Desktop\\Matlab Printer")}
     chromeOptions.add_experimental_option("prefs",pref)
-    browser = webdriver.Chrome(executable_path=os.path.join(os.environ['USERPROFILE'], "Desktop\\Scilab\\chromedriver.exe"), chrome_options=chromeOptions)
+    browser = webdriver.Chrome(executable_path=os.path.join(os.environ['USERPROFILE'], "Desktop\\Matlab Printer\\chromedriver.exe"), chrome_options=chromeOptions)
     browser.get("http://ulc.srmuniv.ac.in/elabvdp/")
     browser.find_element_by_id("username").send_keys(u)
     browser.find_element_by_id("password").send_keys(p)
@@ -39,7 +39,7 @@ def store_login():
     time.sleep(1)
     browser.find_element_by_css_selector("div.card-content.white-text").click()
     delay = 1
-    for o in range(100):
+    for o in range(22,26):
         o = str(o)
         browser.get("http://ulc.srmuniv.ac.in/elabvdp/login/student/code/mathslab/mathslab.code.php?id=1&value="+o)
         try:
@@ -55,7 +55,7 @@ def store_login():
 
 root = tk.Tk()
 root.geometry('300x175')
-root.title('Welcome to Elab')
+root.title('Matlab Printer')
 parent = tk.Frame(root, padx=10, pady=10)
 parent.pack(fill=tk.BOTH, expand=True)
 user = entry(parent, "User Name : ", 16)
