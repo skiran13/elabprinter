@@ -8,4 +8,4 @@
 [b'a=linspace(1,10,5);', b'disp(a);', b'disp(a.*2);', b'disp(a./2);', b'disp(a.^2);', b'disp(a.\\2);']
 [b'a=[5;2;7;5]', b'b=a+3']
 
-[b'p=317;', b's=333;', b'l=34*2;', b't=57.50;', b'balance=780-(p+s+l+t)']
+[b'p=317;', b's=333;', b'l=34*2;', b't=57.50;', b'balance=780-(p+s+l+t)
