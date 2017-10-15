@@ -56,14 +56,16 @@ def store_login():
 
 
 root = tk.Tk()
-root.geometry('300x200')
+root.geometry('300x270')
 root.title('Matlab Printer')
 parent = tk.Frame(root, padx=10, pady=10)
 parent.pack(fill=tk.BOTH, expand=True)
 user = entry(parent, "User Name : ", 16)
 password = entry(parent, "Password :", 16, show="*")
 programs = entry(parent, "No. of Programs : ", 3)
-b = tk.Button(parent, borderwidth=4, text="Login", width=10, pady=10, command=store_login)
+w = tk.Label(parent, text="\nMade by:\nS Surya Kiran\nRA1711003040014(CSE-B)\nskiran13@gmail.com")
+w.pack(side=tk.BOTTOM)
+b = tk.Button(parent, borderwidth=4, text="Login", width=10, pady=5, command=store_login)
 b.pack(side=tk.BOTTOM)
 parent.mainloop()
 pdfconv()
