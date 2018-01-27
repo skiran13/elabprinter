@@ -34,7 +34,7 @@ def store_loginJAVA():
     pref = {"download.default_directory" : os.path.join(os.environ['USERPROFILE'], "Desktop\\eLab Printer")}
     chromeOptions.add_experimental_option("prefs",pref)
     browser = webdriver.Chrome(executable_path=os.path.join(os.environ['USERPROFILE'], "Desktop\\eLab Printer\\chromedriver.exe"), chrome_options=chromeOptions)
-    browser.get("http://care.srmuniv.ac.in/vdppddjavaada/")
+    browser.get("http://care2.srmuniv.ac.in/vdp//")
     browser.find_element_by_id("username").send_keys(u)
     browser.find_element_by_id("password").send_keys(p)
     browser.find_element_by_id("button").click()
@@ -43,10 +43,10 @@ def store_loginJAVA():
     delay = 1
     for o in range(progs):
         o = str(o)
-        browser.get("http://care.srmuniv.ac.in/vdppddjavaada/login/student/code/java/java.code.php?id=1&value="+o)
+        browser.get("http://care2.srmuniv.ac.in/vdp//login/student/code/java/java.code.php?id=1&value="+o)
         try:
             WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.ID, 'evaluateButton')))
-            browser.get("http://care.srmuniv.ac.in/vdppddjavaada/login/student/code/getReport.php")
+            browser.get("http://care2.srmuniv.ac.in/vdp//login/student/code/getReport.php")
 
         except TimeoutException:
             print("Loading took too much time!")
@@ -64,7 +64,7 @@ def store_loginDAA():
     pref = {"download.default_directory" : os.path.join(os.environ['USERPROFILE'], "Desktop\\eLab Printer")}
     chromeOptions.add_experimental_option("prefs",pref)
     browser = webdriver.Chrome(executable_path=os.path.join(os.environ['USERPROFILE'], "Desktop\\eLab Printer\\chromedriver.exe"), chrome_options=chromeOptions)
-    browser.get("http://care.srmuniv.ac.in/vdppddjavaada/")
+    browser.get("http://care2.srmuniv.ac.in/vdp//")
     browser.find_element_by_id("username").send_keys(u)
     browser.find_element_by_id("password").send_keys(p)
     browser.find_element_by_id("button").click()
@@ -73,10 +73,10 @@ def store_loginDAA():
     delay = 1
     for o in range(progs):
         o = str(o)
-        browser.get("http://care.srmuniv.ac.in/vdppddjavaada/login/student/code/daa/daa.code.php?id=1&value="+o)
+        browser.get("http://care2.srmuniv.ac.in/vdp//login/student/code/daa/daa.code.php?id=1&value="+o)
         try:
             WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.ID, 'evaluateButton')))
-            browser.get("http://care.srmuniv.ac.in/vdppddjavaada/login/student/code/getReport.php")
+            browser.get("http://care2.srmuniv.ac.in/vdp//login/student/code/getReport.php")
 
         except TimeoutException:
             print("Loading took too much time!")
@@ -93,7 +93,7 @@ def store_loginC():
     pref = {"download.default_directory" : os.path.join(os.environ['USERPROFILE'], "Desktop\\eLab Printer")}
     chromeOptions.add_experimental_option("prefs",pref)
     browser = webdriver.Chrome(executable_path=os.path.join(os.environ['USERPROFILE'], "Desktop\\eLab Printer\\chromedriver.exe"), chrome_options=chromeOptions)
-    browser.get("http://care.srmuniv.ac.in/vdppddjavaada/")
+    browser.get("http://care2.srmuniv.ac.in/vdp//")
     browser.find_element_by_id("username").send_keys(u)
     browser.find_element_by_id("password").send_keys(p)
     browser.find_element_by_id("button").click()
@@ -102,10 +102,10 @@ def store_loginC():
     delay = 1
     for o in range(progs):
         o = str(o)
-        browser.get("http://care.srmuniv.ac.in/vdppddjavaada/login/student/code/c/c.code.php?id=1&value="+o)
+        browser.get("http://care2.srmuniv.ac.in/vdp//login/student/code/c/c.code.php?id=1&value="+o)
         try:
             WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.ID, 'evaluateButton')))
-            browser.get("http://care.srmuniv.ac.in/vdppddjavaada/login/student/code/getReport.php")
+            browser.get("http://care2.srmuniv.ac.in/vdp//login/student/code/getReport.php")
 
         except TimeoutException:
             print("Loading took too much time!")
